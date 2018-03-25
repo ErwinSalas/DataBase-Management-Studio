@@ -4,8 +4,6 @@
   "description": "Ansible-client",
   "main": "js/admin.js",
   "scripts": {
-    "dev": "next",
-    "build": "next build",
     "start": "node server.js"
 },
   "repository": {
