@@ -7,6 +7,7 @@ var app = angular.module('loginModule', [])
             password: ""
 
         };
+        var API_ROOT="https://monitoring-studio-api.herokuapp.com"
         // modelo de datos.
 
         /**
@@ -17,7 +18,7 @@ var app = angular.module('loginModule', [])
             console.log("dologin");
             $http({
                 method: "POST",
-                url: '172.24.119.79:8000/crearLogin',
+                url: API_ROOT+'/crearLogin',
                 data: $scope.loginData
             }
             ).success(function successCallback(response) {
