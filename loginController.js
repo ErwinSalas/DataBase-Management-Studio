@@ -13,7 +13,7 @@ var app = angular.module('loginModule', [])
          * Ejecuta el inicio de sesión.
          */
 
-        document.getElementById("dologin").onclick=function() {
+        document.getElementById("dologin").onclick( function(){
             console.log("dologin");
             $http({
                 method: "POST",
@@ -24,6 +24,9 @@ var app = angular.module('loginModule', [])
                 // this callback will be called asynchronously
                 // when the response is available
                 console.log("entro", response);
+                if (response.data.result == true){
+
+                }
 
             }).error(function errorCallback(response) {
                 // called asynchronously if an error occurs
@@ -31,7 +34,7 @@ var app = angular.module('loginModule', [])
                 console.log("fallo", response);
                 callback(response.content);
             });
-        };
+        });
 
         /**
          * Guarda la sesión en el almacenamiento local del navegador.
