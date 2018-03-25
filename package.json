@@ -3,12 +3,16 @@
   "version": "1.0.3",
   "description": "Ansible-client",
   "main": "js/admin.js",
-  "scripts": {},
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "node server.js"
+},
   "repository": {
     "type": "git",
     "url": ""
   },
-  "author": "Erwin Salas,Bryan Ruiz, Johana Ruiz, Juliana Campos",
+  "author": "Erwin Salas,Bryan Ruiz, Christian Sanchez",
   "license": "MIT",
   "bugs": {
     "url": ""

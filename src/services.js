@@ -8,13 +8,12 @@ angular.module('mainModule')
     objetos json
     */
 
-    .factory('ReserveResource', function ($http) {
-        var authToken = localStorage.getItem('session.token');
+    .factory('DataResource', function ($http) {
         var factory = {
             getReserve: function (reserveID, callback) {
                 $http({
                         method: "GET",
-                        url: API_ROOT+'/reservation/get?id={0}&authToken={1}'.format(reserveID, authToken)
+                        url: API_ROOT+'/'
                     }
                 ).success(function successCallback(response) {
                     // this callback will be called asynchronously
@@ -31,8 +30,7 @@ angular.module('mainModule')
             setReserve: function (reservation) {
                 $http({
                     method: 'POST',
-                    url: API_ROOT + '/reservation/reserve?authToken={0}'
-                        .format(authToken),
+                    url: API_ROOT + '/',
                     data: reservation
                 })
                     .success(function (data) {

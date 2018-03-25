@@ -25,14 +25,14 @@ var app = angular.module('loginModule', [])
                 // when the response is available
                 console.log("entro", response);
                 if (response.data.result == true){
-
+                    window.location.href = ('src');
                 }
 
             }).error(function errorCallback(response) {
                 // called asynchronously if an error occurs
                 // or server returns response with an error status.
                 console.log("fallo", response);
-                callback(response.content);
+                
             });
         };
 
