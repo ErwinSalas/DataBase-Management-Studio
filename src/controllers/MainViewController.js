@@ -12,6 +12,9 @@ angular.module('mainModule')
         $scope.email= usuario.email;*/
         $scope.user = "Database Management Studio ";
         $scope.email = "@superuser";
+
+
+        
        
     })
          
