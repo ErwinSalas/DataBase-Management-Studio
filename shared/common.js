@@ -55,7 +55,7 @@ const LS_REMEMBER_SESSION = "rememberSession";
  * Dirección raíz del API.
  * @type {string}
  */
-const API_ROOT = "http://transportec-api.azurewebsites.net";
+const API_ROOT = "";
 
 /**
  * Formatea una cadena de texto en base a los parámetros proporcionados.

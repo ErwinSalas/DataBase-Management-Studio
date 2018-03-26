@@ -13,9 +13,12 @@ angular.module('mainModule')
         $scope.user = "Database Management Studio ";
         $scope.email = "@superuser";
 
-        $scope.databases=["master","test1","test2","db1","db2"]
+        $scope.databases=["master","test1","test2","db1","db2"];
         
-       
+        $scope.saveUseDatabase= function(database){
+
+            localStorage.setItem('database', database);
+        };
     })
          
 

@@ -11,48 +11,33 @@
                             <div >
                                 <div class="input-group">
                                     <span class="input-group-addon">
-                                        <i class="material-icons">person</i>
+                                        <img src="../../assets/images/db-disk.png" height="20" width="20">
                                     </span>
                                     <div class="form-line">
-                                        <input type="text" class="form-control" name="username"  ng-model="loginData.username" placeholder="Username" required autofocus>
+                                        <input type="text" class="form-control" name="disk_name"  ng-model="disk.name" placeholder="disk name" required autofocus>
                                     </div>
                                 </div>
                                 <div class="input-group">
+                                    <span class="input-group-addon">
+                                            <i class="material-icons">timeline</i>
+                                    </span>
+                                    <div class="form-line">
+                                        <input type="text" class="form-control" name="maxsize"  ng-model="disk.size" placeholder="maxsize" required autofocus>
+                                    </div>
+                                </div>
+                                <div class="input-group m-b-35">
                                     <span class="input-group-addon">
                                         <i class="material-icons">dns</i>
                                     </span>
                                     <div class="form-line">
-                                        <input type="text" class="form-control" name="db_host"  ng-model="loginData.db_host" placeholder="Server IP" required autofocus>
+                                        <input type="text" class="form-control" name="database"  ng-model="disk.database" placeholder="database" required autofocus>
                                     </div>
                                 </div>
-                                <div class="input-group">
-                                    <span class="input-group-addon">
-                                        <i class="material-icons">settings_applications</i>
-                                    </span>
-                                    <div class="form-line">
-                                        <input type="text" class="form-control" name="engine"  ng-model="loginData.engine" placeholder="Data Base Engine" required autofocus>
-                                    </div>
-                                </div>
-                                <div class="input-group">
-                                    <span class="input-group-addon">
-                                        <i class="material-icons">settings_remote</i>
-                                    </span>
-                                    <div class="form-line">
-                                        <input type="text" class="form-control" name="port"  ng-model="loginData.port" placeholder="Port" required autofocus>
-                                    </div>
-                                </div>
-                                <div class="input-group">
-                                    <span class="input-group-addon">
-                                        <i class="material-icons">lock</i>
-                                    </span>
-                                    <div class="form-line">
-                                        <input type="password" class="form-control" ng-model="loginData.password"name="password" placeholder="Password" required>
-                                    </div>
-                                </div>
-                                <div class="row">
+                                
+                                <div class="row m-t-35">
                                     
                                     <div class="col-xs-12">
-                                        <button class="btn btn-block bg-orange waves-effect" ng-click ="dologin()">Connect</button>
+                                        <button class="btn btn-block bg-orange waves-effect" ng-click ="createDisk()">Create</button>
                                     </div>
                                 </div>
                                

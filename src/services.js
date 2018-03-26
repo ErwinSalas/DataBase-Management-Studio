@@ -43,7 +43,7 @@ angular.module('mainModule')
         };
         return res;
     })
-    .factory('DataResources', function ($http) {
+    .factory('FileGroupResources', function ($http) {
         var res = {
             getFileGroupInformation: function (callback) {
                 $http({

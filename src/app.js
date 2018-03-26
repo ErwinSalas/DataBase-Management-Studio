@@ -7,9 +7,9 @@ angular.module('mainModule',['ngRoute'])
         $routeProvider.when("/disks",{
             templateUrl:'views/disks.html',
             controller: 'DiskController'
-        }).when("/groups",{
+        }).when("/files",{
                 templateUrl:'views/groups.html',
-                controller: 'GroupsController'
+                controller: 'FileGroupController'
             })
        
         .when("/create-disk",{
