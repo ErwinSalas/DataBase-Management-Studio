@@ -13,7 +13,7 @@ angular.module('mainModule')
         $scope.user = "Database Management Studio ";
         $scope.email = "@superuser";
 
-
+        $scope.databases=["master","test1","test2","db1","db2"]
         
        
     })

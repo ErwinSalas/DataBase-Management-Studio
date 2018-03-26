@@ -5,7 +5,7 @@
   "main": "js/admin.js",
   "scripts": {
     "start": "node server.js"
-},
+  },
   "repository": {
     "type": "git",
     "url": ""
@@ -17,6 +17,7 @@
   },
   "homepage": "",
   "dependencies": {
+    "angular-chart.js": "^1.1.1",
     "connect": "^3.6.6",
     "express": "^4.16.3",
     "select.js": "^1.0.3",

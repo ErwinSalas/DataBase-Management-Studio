@@ -2,46 +2,67 @@
  * Created by Erwin on 27/10/2016.
  */
 angular.module('mainModule')
-    /*
-    Los factory en angular estan basados en el patron de diseño factoria el cual
-    deviuelve instancias de un objeto o variable en este caso es un arreglo de
-    objetos json
-    */
 
-    .factory('DataResource', function ($http) {
-        var factory = {
-            getReserve: function (reserveID, callback) {
+    .factory('DiskResources', function ($http) {
+        var res = {
+            getDiskInformation: function (callback) {
                 $http({
-                        method: "GET",
-                        url: API_ROOT+'/'
-                    }
+                    method: "GET",
+                    url: API_ROOT + '/'
+                }
                 ).success(function successCallback(response) {
                     // this callback will be called asynchronously
                     // when the response is available
                     console.log("entro", response);
-                   
+                    callback(response);
+
                 }).error(function errorCallback(response) {
                     // called asynchronously if an error occurs
                     // or server returns response with an error status.
                     console.log("fallo", response);
-                    callback(response.content);
+                    callback(response);
                 });
             },
-            setReserve: function (reservation) {
+            CreateNewDisk: function (DiskInformation) {
                 $http({
                     method: 'POST',
                     url: API_ROOT + '/',
-                    data: reservation
-                })
-                    .success(function (data) {
-                        if (data.errors) {
-                            // Showing errors.
-                            console.log("set message error", data.errors);
-                        } else {
-                            console.log("set reservation success",data);
-                        }
-                    });
+                    data: DiskInformation
+                }).success(function successCallback (data) {
+                    // this callback will be called asynchronously
+                    // when the response is available
+                    console.log("entro", response);
+                    callback(response);
+                }).error(function errorCallback(response) {
+                        // called asynchronously if an error occurs
+                        // or server returns response with an error status.
+                        console.log("fallo", response);
+                        callback(response.content);
+                });
             }
         };
-        return factory;
+        return res;
+    })
+    .factory('DataResources', function ($http) {
+        var res = {
+            getFileGroupInformation: function (callback) {
+                $http({
+                    method: "GET",
+                    url: API_ROOT + '/'
+                }
+                ).success(function successCallback(response) {
+                    // this callback will be called asynchronously
+                    // when the response is available
+                    console.log("entro", response);
+                    callback(response);
+
+                }).error(function errorCallback(response) {
+                    // called asynchronously if an error occurs
+                    // or server returns response with an error status.
+                    console.log("fallo", response);
+                    callback(response);
+                });
+            }
+        };
+        return res;
     });

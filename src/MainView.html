@@ -32,7 +32,7 @@
     <link rel="stylesheet" href="../assets/css/cards.css">
 </head>
 
-<body class="theme-blue">
+<body class="theme-blue" ng-controller="MainViewController">
     <!-- Page Loader -->
     <div class="page-loader-wrapper">
         <div class="loader">
@@ -65,262 +65,177 @@
             <div class="navbar-header">
                 <a href="javascript:void(0);" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false"></a>
                 <a href="javascript:void(0);" class="bars"></a>
-                <a class="navbar-brand" >DB - MONITORING STUDIO</a>
+                <a class="navbar-brand">DB - MONITORING STUDIO</a>
             </div>
             <div class="collapse navbar-collapse" id="navbar-collapse">
                 <ul class="nav navbar-nav navbar-right">
                     <!-- Call Search -->
-                   
+
                     <!-- #END# Call Search -->
                     <!-- Notifications -->
                     <li class="dropdown">
                         <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button">
                             <img src="../assets/images/db.png" height="24" width="24" />
-                            
+
                         </a>
                         <ul class="dropdown-menu">
                             <li class="header">Databases</li>
                             <li class="body">
-                                <ul class="menu">
-                                    <li>
-                                        <a href="javascript:void(0);">
-                                            <div class="icon-circle bg-light-green">
-                                                <i class="material-icons">person_add</i>
+                                <ul class="menu" style="overflow: hidden; width: auto; height: 254px;">
+                                    <li ng-repeat="database in databases">
+                                        <a href="">
+                                            <div class="icon-circle bg-orange">
+                                                <i class="material-icons">dns</i>
                                             </div>
                                             <div class="menu-info">
-                                                <h4>12 new members joined</h4>
+                                                <h4>{{database}}</h4>
                                                 <p>
                                                     <i class="material-icons">access_time</i> 14 mins ago
                                                 </p>
                                             </div>
                                         </a>
                                     </li>
-                                    <li>
-                                        <a href="javascript:void(0);">
-                                            <div class="icon-circle bg-cyan">
-                                                <i class="material-icons">add_shopping_cart</i>
-                                            </div>
-                                            <div class="menu-info">
-                                                <h4>4 sales made</h4>
-                                                <p>
-                                                    <i class="material-icons">access_time</i> 22 mins ago
-                                                </p>
-                                            </div>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:void(0);">
-                                            <div class="icon-circle bg-red">
-                                                <i class="material-icons">delete_forever</i>
-                                            </div>
-                                            <div class="menu-info">
-                                                <h4>
-                                                    <b>Nancy Doe</b> deleted account</h4>
-                                                <p>
-                                                    <i class="material-icons">access_time</i> 3 hours ago
-                                                </p>
-                                            </div>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:void(0);">
-                                            <div class="icon-circle bg-orange">
-                                                <i class="material-icons">mode_edit</i>
-                                            </div>
-                                            <div class="menu-info">
-                                                <h4>
-                                                    <b>Nancy</b> changed name</h4>
-                                                <p>
-                                                    <i class="material-icons">access_time</i> 2 hours ago
-                                                </p>
-                                            </div>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:void(0);">
-                                            <div class="icon-circle bg-blue-grey">
-                                                <i class="material-icons">comment</i>
-                                            </div>
-                                            <div class="menu-info">
-                                                <h4>
-                                                    <b>John</b> commented your post</h4>
-                                                <p>
-                                                    <i class="material-icons">access_time</i> 4 hours ago
-                                                </p>
-                                            </div>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:void(0);">
-                                            <div class="icon-circle bg-light-green">
-                                                <i class="material-icons">cached</i>
-                                            </div>
-                                            <div class="menu-info">
-                                                <h4>
-                                                    <b>John</b> updated status</h4>
-                                                <p>
-                                                    <i class="material-icons">access_time</i> 3 hours ago
-                                                </p>
-                                            </div>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:void(0);">
-                                            <div class="icon-circle bg-purple">
-                                                <i class="material-icons">settings</i>
-                                            </div>
-                                            <div class="menu-info">
-                                                <h4>Settings updated</h4>
-                                                <p>
-                                                    <i class="material-icons">access_time</i> Yesterday
-                                                </p>
-                                            </div>
-                                        </a>
-                                    </li>
+
                                 </ul>
                             </li>
-                            <li class="footer">
-                                <a href="javascript:void(0);">View All Notifications</a>
-                            </li>
+
                         </ul>
                     </li>
                     <!-- #END# Notifications -->
-                    
-                    
+
+
                 </ul>
             </div>
         </div>
-    </nav>
-    <!-- #Top Bar -->
-    <!-- Se enlaza el controller al sidebar -->
-    <!-- en el se encuentran los datos de usuario que aparecen en el sidebar -->
-    <section ng-controller="MainViewController">
-        <!-- Left Sidebar -->
-        <aside id="leftsidebar" class="sidebar">
-            <!-- Informacion del usuario -->
-            <div class="user-info ">
-                <div class="image ">
-                    <img src="../assets/images/ms.jpg" width="48" height="48" alt="User" />
-                </div>
-                <div class="info-container">
-                    <!-- Menu de cierre de session -->
-                    <div class="name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{user}}</div>
-                    <div class="email">{{email}}</div>
-                    <div class="btn-group user-helper-dropdown">
-                        <i class="material-icons" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">keyboard_arrow_down</i>
-                        <ul class="dropdown-menu pull-right">
-                            <li role="seperator" class="divider"></li>
-                            <li>
-                                <a href="javascript:void(0);" onclick="signOut()">
-                                    <i class="material-icons">input</i>Sign Out</a>
-                            </li>
-                        </ul>
+        </nav>
+        <!-- #Top Bar -->
+        <!-- Se enlaza el controller al sidebar -->
+        <!-- en el se encuentran los datos de usuario que aparecen en el sidebar -->
+        <section>
+            <!-- Left Sidebar -->
+            <aside id="leftsidebar" class="sidebar">
+                <!-- Informacion del usuario -->
+                <div class="user-info ">
+                    <div class="image ">
+                        <img src="../assets/images/ms.jpg" width="48" height="48" alt="User" />
+                    </div>
+                    <div class="info-container">
+                        <!-- Menu de cierre de session -->
+                        <div class="name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{user}}</div>
+                        <div class="email">{{email}}</div>
+                        <div class="btn-group user-helper-dropdown">
+                            <i class="material-icons" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">keyboard_arrow_down</i>
+                            <ul class="dropdown-menu pull-right">
+                                <li role="seperator" class="divider"></li>
+                                <li>
+                                    <a href="javascript:void(0);" onclick="signOut()">
+                                        <i class="material-icons">input</i>Sign Out</a>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <!-- #User Info -->
-            <!-- Menu -->
-            <div class="menu">
-                <ul class="list">
-                    <li class="header bg-orange ">Options</li>
-                    <li class="tecTitles">
-                        <a href="#/inicio" onclick="closeSideBar()">
-                            <i class="material-icons">home</i>
-                            <span>Inicio</span>
-                        </a>
-                    </li>
-                    <li class="tecTitles">
-                        <a href="#/disks" onclick="closeSideBar()">
-                            <img src="../assets/images/db-disk.png" height="24" width="24" />
-                            <span>Data base disks</span>
-                        </a>
-                    </li>
+                <!-- #User Info -->
+                <!-- Menu -->
+                <div class="menu">
+                    <ul class="list">
+                        <li class="header bg-orange ">Options</li>
+                        <li class="tecTitles">
+                            <a href="#/inicio" onclick="closeSideBar()">
+                                <i class="material-icons">home</i>
+                                <span>Inicio</span>
+                            </a>
+                        </li>
+                        <li class="tecTitles">
+                                <a href="#/create-disk" onclick="closeSideBar()">
+                                    <img src="../assets/images/newdisk.png" height="24" width="24" />
+                                    <span>New Disk</span>
+                                </a>
+                            </li>
+                        <li class="tecTitles">
+                            <a href="#/disks" onclick="closeSideBar()">
+                                <img src="../assets/images/db-disk.png" height="24" width="24" />
+                                <span>Data base disks</span>
+                            </a>
+                        </li>
 
-                    <li class="tecTitles">
-                        <a href="#/files" onclick="closeSideBar()">
-                            <img src="../assets/images/files.png" height="34" width="34" />
-                            <span>File Groups</span>
-                        </a>
-                    </li>
+                        <li class="tecTitles">
+                            <a href="#/files" onclick="closeSideBar()">
+                                <img src="../assets/images/files.png" height="34" width="34" />
+                                <span>File Groups</span>
+                            </a>
+                        </li>
 
-                </ul>
-            </div>
-            <!-- #Menu -->
-            <!-- Footer -->
-            <div class="legal">
-                <div class="copyright">
-                    &copy; 2017
-                    <a href="javascript:void(0);"></a>.
+                    </ul>
                 </div>
-                <div class="version">
-                    <b>Powered by: </b>
-                    <br> Brayan Ruiz, Erwin Salas Christian Sanchez
+                <!-- #Menu -->
+                <!-- Footer -->
+                <div class="legal">
+                    <div class="copyright">
+                        &copy; 2017
+                        <a href="javascript:void(0);"></a>.
+                    </div>
+                    <div class="version">
+                        <b>Powered by: </b>
+                        <br> Brayan Ruiz, Erwin Salas Christian Sanchez
+                    </div>
                 </div>
-            </div>
-            <!-- #Footer -->
-        </aside>
-        <!-- #END# Left Sidebar -->
+                <!-- #Footer -->
+            </aside>
+            <!-- #END# Left Sidebar -->
 
-    </section>
-    <!-- Contenedor en el que se insertaran las vistas del ng-route -->
-    <section class="content" ng-view="">
-        <!--Los templates que se cargan aqui son los que se declaran en el archivo app.js -->
-    </section>
+        </section>
+        <section class="content" ng-view="">
 
-    <!-- Dependencias de angular  -->
-    <script type="text/javascript" src="../bower_components/jquery/dist/jquery.min.js"></script>
-    <script type="text/javascript" src="../bower_components/moment/min/moment.min.js"></script>
-    <script type="text/javascript" src="../node-modules/select.js/lib/select.js"></script>
-    <script type="text/javascript" src="../bower_components/angular/angular.min.js"></script>
-    <script type="text/javascript" src="../bower_components/angular-route/angular-route.min.js"></script>
+        </section>
+
+        <!-- Dependencias de angular  -->
+        <script type="text/javascript" src="../bower_components/jquery/dist/jquery.min.js"></script>
+        <script type="text/javascript" src="../bower_components/moment/min/moment.min.js"></script>
+        <script type="text/javascript" src="../node-modules/select.js/lib/select.js"></script>
+        <script type="text/javascript" src="../bower_components/angular/angular.min.js"></script>
+        <script type="text/javascript" src="../bower_components/angular-route/angular-route.min.js"></script>
 
 
-    <script src="../plugins/bootstrap/js/bootstrap.js"></script>
-    <!-- Funciones y variables compartidas entre madulos  -->
-    <script src="../shared/common.js"></script>
-    <!-- app Js -->
-    <script src="app.js"></script>
-    <!-- services -->
-    <!-- main controller Js -->
-    <script src="controllers/MainViewController.js"></script>
+        <script src="../plugins/bootstrap/js/bootstrap.js"></script>
+       
 
+        <!--script src="../node_modules/angular-chart.js/dist/angular-chart.min.js"></script-->
+        <script src="../shared/common.js"></script>
+        <!-- app Js -->
+        <script src="app.js"></script>
+        <!-- services -->
+        <script src="services.js"></script>
+        <!-- main controller Js -->
+        <script src="controllers/MainViewController.js"></script>
+        <script src="controllers/DiskController.js"></script>
+        <script src="controllers/CreateDiskController.js"></script>
 
-    <!--<script src="controllers/reservationsCtrl.js"></script>-->
-    <!-- reservationCreate controller Js -->
-    <!--<script src="controllers/fleetCtrl.js"></script>-->
-    <!-- reservationCreate controller Js -->
-    <!--<script src="controllers/myreservesCtrl.js"></script>-->
-    <!-- reservationCreate controller Js -->
-    <!--<script src="controllers/myreservesInfoCtrl.js"></script>-->
-    <!-- reservationCreate controller Js -->
-    <!--<script src="controllers/fleetInfoCtrl.js"></script>-->
-
-    <!-- Jquery Core Js -->
+        <script src="controllers/GroupsController.js"></script>
 
 
 
-    <!-- Select Plugin Js -->
-    <script src="../plugins/bootstrap-select/js/bootstrap-select.js"></script>
-
-    <!-- Slimscroll Plugin Js -->
-    <script src="../plugins/jquery-slimscroll/jquery.slimscroll.js"></script>
-
-    <!-- JQuery Steps Plugin Js -->
-    <script src="../plugins/jquery-steps/jquery.steps.js"></script>
-
-    <script src="../assets/js/pages/forms/form-wizard.js"></script>
 
 
-    <!-- Waves Effect Plugin Js -->
-    <script src="../plugins/node-waves/waves.js"></script>
 
-    <!-- Custom Js -->
-    <script src="../assets/js/admin.js"></script>
 
-    <!--<script src="../shared/common.js"></script>-->
-    <!--<script src="../shared/operationHelper.js"></script>-->
-    <!--<script src="../shared/session.js"></script>-->
-    <!--<script src="../shared/sharedServices.js"></script>-->
+        <!-- Select Plugin Js -->
+        <script src="../plugins/bootstrap-select/js/bootstrap-select.js"></script>
+
+        <!-- Slimscroll Plugin Js -->
+        <script src="../plugins/jquery-slimscroll/jquery.slimscroll.js"></script>
+
+        <!-- JQuery Steps Plugin Js -->
+        <script src="../plugins/jquery-steps/jquery.steps.js"></script>
+
+        <script src="../assets/js/pages/forms/form-wizard.js"></script>
+
+
+        <!-- Waves Effect Plugin Js -->
+        <script src="../plugins/node-waves/waves.js"></script>
+
+        <!-- Custom Js -->
+        <script src="../assets/js/admin.js"></script>
 
 </body>
 

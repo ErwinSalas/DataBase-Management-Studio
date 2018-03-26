@@ -1,0 +1,66 @@
+<div class="container-fluid">
+    <div class="row clearfix">
+
+            <div class="login-box">
+                    <div class="header">
+                        <h2>Create a New Disk</h2>
+                        
+                    </div>
+                    <div class="card">
+                        <div class="body">
+                            <div >
+                                <div class="input-group">
+                                    <span class="input-group-addon">
+                                        <i class="material-icons">person</i>
+                                    </span>
+                                    <div class="form-line">
+                                        <input type="text" class="form-control" name="username"  ng-model="loginData.username" placeholder="Username" required autofocus>
+                                    </div>
+                                </div>
+                                <div class="input-group">
+                                    <span class="input-group-addon">
+                                        <i class="material-icons">dns</i>
+                                    </span>
+                                    <div class="form-line">
+                                        <input type="text" class="form-control" name="db_host"  ng-model="loginData.db_host" placeholder="Server IP" required autofocus>
+                                    </div>
+                                </div>
+                                <div class="input-group">
+                                    <span class="input-group-addon">
+                                        <i class="material-icons">settings_applications</i>
+                                    </span>
+                                    <div class="form-line">
+                                        <input type="text" class="form-control" name="engine"  ng-model="loginData.engine" placeholder="Data Base Engine" required autofocus>
+                                    </div>
+                                </div>
+                                <div class="input-group">
+                                    <span class="input-group-addon">
+                                        <i class="material-icons">settings_remote</i>
+                                    </span>
+                                    <div class="form-line">
+                                        <input type="text" class="form-control" name="port"  ng-model="loginData.port" placeholder="Port" required autofocus>
+                                    </div>
+                                </div>
+                                <div class="input-group">
+                                    <span class="input-group-addon">
+                                        <i class="material-icons">lock</i>
+                                    </span>
+                                    <div class="form-line">
+                                        <input type="password" class="form-control" ng-model="loginData.password"name="password" placeholder="Password" required>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    
+                                    <div class="col-xs-12">
+                                        <button class="btn btn-block bg-orange waves-effect" ng-click ="dologin()">Connect</button>
+                                    </div>
+                                </div>
+                               
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
+    </div>
+
+</div>
