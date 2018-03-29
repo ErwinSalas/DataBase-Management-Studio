@@ -14,65 +14,53 @@
                             <div class="col-md-6">
                                 <div class="input-group">
                                     <span class="input-group-addon">
-                                        <img src="../../assets/images/db-disk.png" height="20" width="20">
+                                        <img src="../../assets/images/files.png" height="20" width="20">
                                     </span>
                                     <div class="form-line">
-                                        <input type="text" class="form-control" name="disk_name" ng-model="disk.name" placeholder="disk name" required autofocus>
+                                        <input type="text" class="form-control" name="disk_name" ng-model="name" placeholder="filr group name" required autofocus>
                                     </div>
                                 </div>
-                                <div class="input-group">
-                                    <span class="input-group-addon">
-                                        <i class="material-icons">timeline</i>
-                                    </span>
-                                    <div class="form-line">
-                                        <input type="text" class="form-control" name="maxsize" ng-model="disk.size" placeholder="maxsize" required autofocus>
-                                    </div>
-                                </div>
+                               
                                 <div class="input-group m-b-35">
                                     <span class="input-group-addon">
                                         <i class="material-icons">dns</i>
                                     </span>
                                     <div class="form-line">
-                                        <input type="text" class="form-control" name="database" ng-model="disk.database" placeholder="database" required autofocus>
+                                        <input type="text" class="form-control" name="database" ng-model="db" placeholder="database" required autofocus>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-6">
-                                <ul class="menu">
-                                    <li class="header bg-orange">Disks</li>
-                                    <li class="body">
-                                        <ul class="menu" style="overflow: scroll; width: auto; height: 254px;">
-                                            <li ng-repeat="disk in disklist">
-                                                <a href="" ng-click="addDisk({{disk.name}})">
-                                                    <div class="icon-circle bg-orange">
-                                                        <i class="material-icons">dns</i>
-                                                    </div>
-                                                    <div class="menu-info">
-                                                        <h4>{{disk.name}}</h4>
-                                                        <p>
-                                                            <i class="material-icons">access_time</i> 14 mins ago
-                                                        </p>
-                                                    </div>
-                                                </a>
-                                            </li>
+                            <div class="col-md-6" style="overflow: scroll; height: 400px;">
+                                <div ng-repeat="database in dbs" >
+                                    <div class="info-box">
+                                        <div class="icon bg-orange">
+                                            <img src="../assets/images/db.png" height="50" width="50" style="margin-top:15%;" />
 
-                                        </ul>
-                                    </li>
+
+                                        </div>
+                                        <div class="content" ng-init="selectedDatabase=database" ng-click="addDatabaseInGroup(selectedDatabase)">
+                                            <div class="text">{{database}}</div>
+                                           </div>
+                                    </div>
+
+                                </div>
                             </div>
-                        </div>
 
-                    </div>
-
-                    <div class="row m-t-35">
-
-                        <div class="col-xs-12">
-                            <button class="btn btn-block bg-orange waves-effect" ng-click="createDisk()">Create</button>
                         </div>
                     </div>
 
                 </div>
+
+                <div class="row m-t-35">
+
+                    <div class="col-xs-12">
+                        <button class="btn btn-block bg-orange waves-effect" ng-click="setGroup()">Create</button>
+                    </div>
+                </div>
+
             </div>
         </div>
     </div>
+</div>
 
 </div>

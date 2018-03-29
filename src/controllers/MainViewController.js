@@ -3,7 +3,7 @@
  */
 
 angular.module('mainModule')
-    .controller('MainViewController', function($scope,$location) {
+    .controller('MainViewController',function($scope,DataBaseResources) {
     /* config object */
 
        /* var usuario = JSON.parse(sessionStorage.getItem("user"));
@@ -12,14 +12,19 @@ angular.module('mainModule')
         $scope.email= usuario.email;*/
         $scope.user = "Database Management Studio ";
         $scope.email = "@superuser";
-
-        $scope.databases=["master","test1","test2","db1","db2"];
+        getDataBases=function (){
+            DataBaseResources.getDataBaseNames(function (res) {
+                console.log("res ", res);
+                $scope.databases = res;
+            });
+        };
         
         $scope.saveUseDatabase= function(database){
 
             localStorage.setItem('database', database);
         };
-    })
+        getDataBases();
+    });
          
 
 

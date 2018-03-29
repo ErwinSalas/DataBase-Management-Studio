@@ -1,14 +1,14 @@
 angular.module('mainModule')
-    .controller('CreateDiskController', function ($scope, $location) {
-       
-      
-        $scope.databases=["master","test1","test2","db1","db2"]
+    .controller('CreateDiskController', function ($scope, DiskResources) {
         
-        /* $scope.displayDiskList = DataResources.getDiskInformation(function (res) {
-             console.log("res ", res);
-             $scope.disklist = res;
-             
-         });
-         */
+        $scope.createDisk = function(){
+            DiskResources.CreateNewDisk($scope.disk,function (res) {
+                console.log("res ", res);
+                
+                
+            });
+        }
+        
+        
         
     })

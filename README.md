@@ -1,12 +1,10 @@
-#Ansible Client
+#DBS-MS
 
 
 ### Team Members
 
     * Erwin Salas
-    * Juliana Campos
-    * Johana Ruiz
+    * Cristian Sanchez
     * Bryan Ruiz
 Project Description
-A platform for simplify the masive instalation or configuration of a servers node connection.
 

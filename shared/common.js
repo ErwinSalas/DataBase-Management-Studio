@@ -55,7 +55,7 @@ const LS_REMEMBER_SESSION = "rememberSession";
  * Dirección raíz del API.
  * @type {string}
  */
-const API_ROOT = "";
+const API_ROOT = "http://172.24.98.53:8090";
 
 /**
  * Formatea una cadena de texto en base a los parámetros proporcionados.
@@ -76,11 +76,12 @@ String.prototype.format = function() {
  * @param dt Fecha.
  * @returns {String} Fecha con formato aplicado.
  */
-function getFormattedDate(dt) {
-  return "{0} de {1} de {2}, {3}:{4} {5}".format(
-    dt.getDate(), months[dt.getMonth()], dt.getFullYear(),
-    dt.getHours() >= 12 ? dt.getHours() - 12 : dt.getHours(), dt.getMinutes(), dt.getHours() >= 12 ? "PM" : "AM"
-  );
+function getTotalUsage(groups) {
+  var size=0;
+  for (var i = 0; i < groups.length; i++) {
+    size+=parseInt(groups[i].tamano);
+  }
+  return size
 }
 
 /**

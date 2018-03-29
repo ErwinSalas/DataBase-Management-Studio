@@ -1,18 +1,16 @@
 <div class="container-fluid">
-        <div class="row clearfix">
-            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12" ng-repeat="file in files">
-                <div class="info-box">
-                    <div class="icon bg-orange">
-                            <img src="../../assets/images/files.png" height="50" width="50" style="margin-top:15%;"/>
-    
-                            
-                    </div>
-                    <div class="content">
-                        <div class="text">{{file.name}}</div>
-                        <div class="number">{{file.usage}}%</div>
-                    </div>
+    <div class="row clearfix">
+        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12" ng-repeat="file in files">
+            <div class="info-box">
+                <div class="icon bg-orange">
+                    <img src="../../assets/images/files.png" height="50" width="50" style="margin-top:15%;" />
+                </div>
+                <div class="content">
+                    <div class="text">{{file.id}}</div>
+                    <div class="number">{{file.tamano}}</div>%
                 </div>
             </div>
         </div>
-    
     </div>
+
+</div>
