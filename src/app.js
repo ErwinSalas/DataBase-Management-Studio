@@ -15,10 +15,13 @@ angular.module('mainModule',['ngRoute'])
         .when("/create-disk",{
             templateUrl:'views/create-disk.html',
             controller: 'CreateDiskController'
+        }).when("/create-group",{
+            templateUrl:'views/create-group.html',
+            controller: 'CreateGroupController'
         }).when("/",{
             templateUrl:'views/home.html'
         })
-
+        
 
 
     }
