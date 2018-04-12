@@ -41,6 +41,7 @@ angular.module('mainModule')
                 $http({
                     method: 'POST',
                     url:  'http://172.24.98.53:8090/database/crearDisco',
+                    headers: { 'Content-Type': 'application/json'},
                     data: DiskInformation
                 }).success(function successCallback (response) {
                     // this callback will be called asynchronously
@@ -80,12 +81,15 @@ angular.module('mainModule')
             CreateGroup: function (params,callback) {
                 $http({
                     method: "POST",
-                    url: API_ROOT + '/database/crearFileGroup'
+                    url: 'http://172.24.98.53:8090/database/crearFileGroup',
+                    headers: { 'Content-Type': 'application/json'},
+                    data:params
+
                 }
                 ).success(function successCallback(response) {
                     // this callback will be called asynchronously
                     // when the response is available
-                    console.log("entro", response);
+                    console.log("creo grupo", response);
                     callback(response);
 
                 }).error(function errorCallback(response) {

@@ -14,8 +14,8 @@ angular
     };
     $scope.setGroup=function(){
         params={
-            "db":$scope.db,
-            "newFilegroup":$scope.name
+            db:$scope.db,
+            newFilegroup:$scope.name
         }
         FileGroupResources.CreateGroup(params,function (res) {
             console.log("res ", res);
